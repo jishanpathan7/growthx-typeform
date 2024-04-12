@@ -9,6 +9,10 @@ a typeform clone
 ```
 git clone https://github.com/jishanpathan7/growthx-typeform/
 ```
+```
+cd /growthx-typeform
+```
+
 
 - install dependencies (or use yarn)
 
