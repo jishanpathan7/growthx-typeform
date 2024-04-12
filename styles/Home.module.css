@@ -1,0 +1,87 @@
+.initialContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  height: 100vh;
+  margin: 0;
+}
+
+.header {
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+.header > img {
+  animation: slide-up 1s ease-out 1 forwards;
+  margin: 18px 16px;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(90%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  -webkit-font-smoothing: antialiased; /* to smooth pixels, works on macOS only */
+}
+
+.main > section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main > section > div {
+  padding: 0 80px;
+}
+
+.loader {
+  height: 4px;
+  width: 150px;
+  --c: no-repeat linear-gradient(#fff 0 0);
+  background: var(--c), var(--c), #8f8f8f;
+  background-size: 60% 100%;
+  animation: l16 3s infinite;
+}
+@keyframes l16 {
+  0% {
+    background-position: -150% 0, -150% 0;
+  }
+  66% {
+    background-position: 250% 0, -150% 0;
+  }
+  100% {
+    background-position: 250% 0, 250% 0;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .main > section > div {
+    padding: 0 40px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .main > section > div {
+    padding: 0 40px;
+  }
+}
