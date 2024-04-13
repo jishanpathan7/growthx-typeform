@@ -6,9 +6,12 @@ import {
   SET_LAST_NAME,
   SET_INDUSTRY,
   SET_ROLE,
+  RESET_STATE,
+  RESET_PERCENT,
   SET_GOALS,
   SET_EMAIL,
   SET_PHONE,
+  questionsInitialState,
 } from "../index";
 
 export function questionsReducerFunc(
@@ -39,9 +42,15 @@ export function questionsReducerFunc(
 
     case SET_EMAIL:
       return { ...state, email: action.payload };
-      
+
     case SET_PHONE:
       return { ...state, phone: action.payload };
+
+    case RESET_STATE:
+      return questionsInitialState;
+
+    case RESET_PERCENT:
+      return { ...state, percent: 0 };
 
     default:
       return state;

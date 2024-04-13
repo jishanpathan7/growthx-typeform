@@ -5,4 +5,5 @@ export { IndustryInput } from "./IndustryInput";
 export { Intro } from "./Intro";
 export { LastNameInput } from "./LastNameInput";
 export { RoleInput } from "./RoleInput";
-export {PhoneInput} from "./PhoneInput"
+export { PhoneInput } from "./PhoneInput";
+export { Thankyou } from "./Thankyou";

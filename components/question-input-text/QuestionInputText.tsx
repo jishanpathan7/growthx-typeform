@@ -10,11 +10,11 @@ import styles from "./QuestionInputText.module.css";
 import classNames from "classnames";
 
 type QuestionInputTextProps = {
-  readonly placeholder?: string;
-  readonly className?: string;
-  readonly value?: string;
-  readonly onChange?: ChangeEventHandler<HTMLInputElement>;
-  readonly type?: string;
+  placeholder?: string;
+  className?: string;
+  value?: string;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
+  type?: string;
 };
 
 const QuestionInputText = forwardRef(

@@ -3,8 +3,8 @@ import styles from "./QuestionBoxHeading.module.css";
 import classNames from "classnames";
 
 type QuestionBoxHeadingProps = {
-  readonly children: ReactNode;
-  readonly className?: string;
+  children: ReactNode;
+  className?: string;
 };
 
 export function QuestionBoxHeading({

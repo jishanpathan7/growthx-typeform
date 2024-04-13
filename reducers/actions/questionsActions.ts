@@ -6,6 +6,9 @@ export const SET_GOALS = "SET_GOALS";
 export const REMOVE_GOAL = "REMOVE_GOAL";
 export const SET_EMAIL = "SET_EMAIL";
 export const SET_PHONE = "SET_PHONE";
+export const RESET_STATE = "RESET_STATE";
+export const RESET_PERCENT = "RESET_PERCENT";
+
 export type QuestionsActionsType =
   | { type: "SET_FIRST_NAME"; payload: string }
   | {
@@ -20,4 +23,6 @@ export type QuestionsActionsType =
   | { type: "SET_GOALS"; payload: string }
   | { type: "REMOVE_GOAL"; payload: string }
   | { type: "SET_EMAIL"; payload: string }
-  | { type: "SET_PHONE"; payload: string };
+  | { type: "SET_PHONE"; payload: string }
+  | { type: "RESET_STATE"; payload: string }
+  | { type: "RESET_PERCENT"; payload: number };

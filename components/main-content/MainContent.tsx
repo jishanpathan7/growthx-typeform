@@ -95,12 +95,21 @@ export function MainContent() {
             inViewSlide={"up"}
           />
         )}
-         {prev === 6 && [now - 1, now, now + 1].includes(7) && (
+        {prev === 6 && [now - 1, now, now + 1].includes(7) && (
           <Question
             type="phone"
             outView={[now - 1, now + 1].includes(7)}
-            outViewSlide={now - 1 === 7 ? "up" : "down"}
+            outViewSlide={now - 1 === 6 ? "up" : "down"}
             inView={now === 7}
+            inViewSlide={"up"}
+          />
+        )}
+        {prev === 7 && [now - 1, now, now + 1].includes(8) && (
+          <Question
+            type="thankyou"
+            outView={[now - 1, now + 1].includes(8)}
+            outViewSlide={now - 1 === 8 ? "up" : "down"}
+            inView={now === 8}
             inViewSlide={"up"}
           />
         )}

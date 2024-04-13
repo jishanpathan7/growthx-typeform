@@ -15,7 +15,7 @@ const SharedStatesContext = createContext<SharedStatesContextType>({
 });
 
 type SharedStatesProviderType = {
-  readonly children: ReactNode;
+  children: ReactNode;
 };
 
 export function SharedStatesProvider({ children }: SharedStatesProviderType) {
@@ -42,8 +42,6 @@ export function SharedStatesProvider({ children }: SharedStatesProviderType) {
       })
     );
   }
-
-  console.log(questionNum)
 
   const value = {
     questionNum,

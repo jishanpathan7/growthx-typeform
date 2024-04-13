@@ -1,6 +1,5 @@
 import { useQuestions, useSharedStates } from "@/contexts";
 import { isNotValidEmail, isTaskSpecificEmail } from "@/utils";
-import { isPhoneField } from "@/utils/isPhoneValid";
 import { useEffect } from "react";
 
 export function useHandleKeypress() {
@@ -79,12 +78,6 @@ export function useHandleKeypress() {
           setErrorMsg((prevValue) => ({
             ...prevValue,
             phone: "Please fill this in",
-          }));
-          return;
-        } else if (now + 1 === 8 && phone && !isPhoneField(phone)) {
-          setErrorMsg((prevValue) => ({
-            ...prevValue,
-            phone: "Hmm.... that phone number doesnt look right",
           }));
           return;
         }

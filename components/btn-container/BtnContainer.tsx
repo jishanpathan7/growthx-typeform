@@ -4,10 +4,10 @@ import { questrialFont } from "@/utils";
 import classNames from "classnames";
 
 type BtnContainerProps = {
-  readonly children: ReactNode;
-  readonly showPressEnter: boolean;
-  readonly className?: string;
-  readonly onClick?: MouseEventHandler;
+  children: ReactNode;
+  showPressEnter: boolean;
+  className?: string;
+  onClick?: MouseEventHandler;
 };
 
 export function BtnContainer({

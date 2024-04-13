@@ -2,7 +2,7 @@ import styles from "./Error.module.css";
 import Image from "next/image";
 
 type ErrorProps = {
-  readonly message: string;
+  message: string;
 };
 
 export function Error({ message }: ErrorProps) {

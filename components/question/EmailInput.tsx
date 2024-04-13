@@ -19,8 +19,6 @@ export function EmailInput() {
   const errorMsg = error.email ?? "";
   const { email } = state;
 
-  console.log(state)
-
   const handleInputChange: ChangeEventHandler<HTMLInputElement> = (event) => {
     errorMsg &&
       setErrorMsg &&

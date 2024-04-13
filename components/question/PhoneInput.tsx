@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useQuestions, useSharedStates } from "@/contexts";
 import classNames from "classnames";
 import {
@@ -13,7 +14,12 @@ import { ChangeEventHandler } from "react";
 import { SET_PHONE } from "@/reducers";
 
 export function PhoneInput() {
-  const { errorMsg: error, setErrorMsg, handleOkClick } = useSharedStates();
+  const {
+    errorMsg: error,
+    setErrorMsg,
+    handleOkClick,
+    handleQuestionNumUpdate,
+  } = useSharedStates();
   const { state, dispatch } = useQuestions();
 
   const errorMsg = error.phone ?? "";
@@ -30,6 +36,38 @@ export function PhoneInput() {
     dispatch({ type: SET_PHONE, payload: event.target.value });
   };
 
+  const handleSubmit = () => {
+    const formData = {
+      firstName: state.firstName,
+      lastName: state.lastName,
+      industry: state.industry,
+      role: state.role,
+      goals: state.goals,
+      email: state.email,
+      phone: `+91${state.phone}`,
+    };
+
+    const url = "https://eo3oi83n1j77wgp.m.pipedream.net/";
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          console.log("Something went wrong");
+        }
+        return response.json();
+      })
+      .catch((error) => {
+        console.error("Error submitting form:", error);
+      });
+    handleQuestionNumUpdate();
+  };
+
   return (
     <>
       <QuestionNumHeading questionNum={7}>
@@ -43,7 +81,7 @@ export function PhoneInput() {
 
       <QuestionInputText
         type="number"
-        placeholder="+9100000000"
+        placeholder="Enter your phone number here"
         value={phone}
         onChange={handleInputChange}
       />
@@ -54,7 +92,10 @@ export function PhoneInput() {
         <BtnContainer
           className={classNames(styles["btn-container"], styles["ok"])}
           showPressEnter={true}
-          onClick={handleOkClick}
+          onClick={() => {
+            handleSubmit();
+            handleOkClick();
+          }}
         >
           Submit{" "}
           <Image

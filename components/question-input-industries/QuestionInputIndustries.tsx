@@ -21,7 +21,7 @@ import { useQuestions, useSharedStates } from "@/contexts";
 import { IndustriesProps, ObjectType } from "@/types";
 
 type QuestionInputIndustriesProps = IndustriesProps & {
-  readonly setErrorMsg: Dispatch<SetStateAction<ObjectType>> | undefined;
+  setErrorMsg: Dispatch<SetStateAction<ObjectType>> | undefined;
 };
 
 export function QuestionInputIndustries({

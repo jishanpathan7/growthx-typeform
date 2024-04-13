@@ -1,7 +1,7 @@
 import styles from "./ProgressBar.module.css";
 
 type ProgressBarProps = {
-  readonly width?: number;
+  width?: number;
 };
 
 export function ProgressBar({ width }: ProgressBarProps) {

@@ -5,8 +5,8 @@ import Image from "next/image";
 import { ReactNode } from "react";
 
 type QuestionNumHeadingProps = {
-  readonly children: ReactNode;
-  readonly questionNum: number;
+  children: ReactNode;
+  questionNum: number;
 };
 
 export function QuestionNumHeading({

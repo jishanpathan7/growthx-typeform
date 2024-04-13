@@ -17,7 +17,7 @@ const QuestionsContext = createContext<QuestionsContextType>({
 });
 
 type QuestionsProviderType = {
-  readonly children: ReactNode;
+  children: ReactNode;
 };
 
 export function QuestionsProvider({ children }: QuestionsProviderType) {
@@ -38,8 +38,7 @@ export function QuestionsProvider({ children }: QuestionsProviderType) {
       if (role) answeredQues += 1;
       if (goals.length !== 0) answeredQues += 1;
       if (email) answeredQues += 1;
-      if (phone) answeredQues += 1;
-
+      if (phone) answeredQues += 2;
       return (answeredQues * 100) / TOTAL_QUESTIONS;
     },
     [state]
